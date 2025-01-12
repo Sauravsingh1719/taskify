@@ -50,10 +50,8 @@ export default function SignInForm() {
           variant: 'destructive',
         });
       }
-    }
-
-    if (result?.url) {
-      router.replace('/dashboard');
+    } else if (result?.url) {
+      router.replace(result.url);
     }
   };
 

@@ -1,6 +1,7 @@
 import mongoose, {Document, Schema} from 'mongoose';
 
 export interface Task extends Document {
+    id: string;
     title: string;
     description: string;
     createdAt: Date;
