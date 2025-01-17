@@ -124,14 +124,14 @@ export default function Dashboard() {
     }
 
     return (
-        <div className="mx-40">
-            <div>
+        <div className="text-white lg:mx-40 sm:mx-12 h-dvh">
+            <div >
                 <h1 className="font-extrabold text-3xl">
                     Welcome, {session.user?.name}!
                 </h1>
             </div>
             <div>
-                <hr className="w-full h-3 text-black" />
+                <hr className="w-full h-3 text-white" />
             </div>
             <div>
                 <h1 className="font-bold text-2xl">Tasks: {tasks.length}</h1>

@@ -4,7 +4,9 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #FBF5DD;
+  background-image: radial-gradient(circle, #000000, #050505, #090909, #0d0d0d, #111111);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @layer base {
