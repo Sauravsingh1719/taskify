@@ -4,17 +4,21 @@ import './globals.css';
 import AuthProvider from '../context/AuthProvider';
 import { Toaster } from '@/components/ui/toaster';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+
   title: 'Taskify',
   description: 'Effortlessly manage your tasks, boost productivity, and achieve your goals with Taskify. Create to-dos, set deadlines, track progress, and collaborate seamlessly.', // Detailed description
   keywords: ['task management', 'to-do list', 'productivity', 'task tracker', 'project management', 'organization', 'workflow', 'collaboration'], // Relevant keywords
   openGraph: {
     title: 'Taskify - Your Ultimate Task Management Solution',
     description: 'Effortlessly manage your tasks, boost productivity, and achieve your goals with Taskify. Create to-dos, set deadlines, track progress, and collaborate seamlessly.',
-    url: 'https://todo160.vercel.app', // Replace with your actual URL
+
+  
+    url: 'https://taskify160.vercel.app', 
     siteName: 'Taskify',
     images: [
       {
@@ -27,6 +31,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+
   robots: {
     index: true,
     follow: true,
@@ -53,6 +58,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <body className={inter.className}>
           <Navbar />
           {children}
+          <Footer />
           <Toaster />
         </body>
       </AuthProvider>
