@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 
 const Footer = () => {
     const getCurrentYear = () => new Date().getFullYear();
@@ -8,13 +9,19 @@ const Footer = () => {
         <div>
             <ul className='flex flex-col gap-2'>
                 <li>
+                <Link href='/'>
                     Home
+                </Link>
                 </li>
                 <li>
+                <Link href='/sign-in'>
                     Login
+                </Link>
                 </li>
                 <li>
+                <Link href='/sign-up'>
                     Signup
+                </Link>
                 </li>
             </ul>
         </div>
