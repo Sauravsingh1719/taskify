@@ -34,11 +34,8 @@ export const TextGenerateEffect = ({
           {wordsArray.map((word, idx) => (
             <motion.span
               key={word + idx}
-              className="dark:text-white text-black opacity-0"
+              className="dark:text-white text-white opacity-0"
               style={{
-                WebkitTextFillColor: 'transparent', 
-                WebkitBackgroundClip: 'text', 
-                backgroundImage: 'linear-gradient(to bottom, #000000, #3b3b3b, #777676, #b9b7b7, #fffdfd);',
                 filter: filter ? "blur(10px)" : "none",
               }}
             >

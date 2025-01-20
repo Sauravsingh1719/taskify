@@ -4,8 +4,7 @@ import forgotEmail from '../../emails/forgotEmail';
 
 export async function sendForgotEmail(
   email: string,
-  username: string,
-  verifyCode: string
+  forgotPasswordCode: string
 ): Promise<any> {
   try {
     
@@ -23,7 +22,7 @@ export async function sendForgotEmail(
       from: process.env.GMAIL_USER, 
       to: email,
       subject: 'Taskify Code for password reseting',
-      html: forgotEmail({ username: username, otp: verifyCode }),
+      html: forgotEmail({ email: email, otp: forgotPasswordCode }),
     };
 
     

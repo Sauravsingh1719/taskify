@@ -1,5 +1,34 @@
 import mongoose, {Document, Schema} from 'mongoose';
 
+export interface Diary extends Document {
+    id: string;
+    title: string;
+    description: string;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+const DiarySchema : Schema<Diary> = new Schema({
+    title: {
+        type: String,
+        required: [true, "Please provide a title for the diary"],
+        trim: true
+    },
+    description: {
+        type: String,
+        required: [true, "Please provide a description for the diary"],
+        trim: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now
+    }
+})
+
 export interface Task extends Document {
     id: string;
     title: string;
@@ -47,6 +76,7 @@ export interface User extends Document {
     isVerified: boolean,
     verifyCodeExpiry: Date,
     tasks: Task[];
+    diaries: Diary[];
 }
 
 const UserSchema : Schema<User> = new Schema({
@@ -91,7 +121,8 @@ const UserSchema : Schema<User> = new Schema({
         required: true
     },
 
-    tasks: [TaskSchema]
+    tasks: [TaskSchema],
+    diaries: [DiarySchema]
 })
 
 const UserModel = (mongoose.models.User as mongoose.Model<User>) || mongoose.model<User>("User", UserSchema)

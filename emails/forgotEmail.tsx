@@ -1,10 +1,10 @@
 
 interface forgotEmailProps {
-    username: string;
+    email: string;
     otp: string;
   }
   
-  export default function forgotEmail({ username, otp }: forgotEmailProps): string { 
+  export default function forgotEmail({ email, otp }: forgotEmailProps): string { 
     const htmlString = `<!DOCTYPE html>
   <html lang="en" dir="ltr">
   <head>
@@ -17,7 +17,7 @@ interface forgotEmailProps {
   </head>
   <body>
   <div style="padding: 20px;">
-    <h2>Hello ${username},</h2>
+    <h2>Hello ${email},</h2>
     <p>Otp to reset your password is:</p>
     <p style="font-size: 20px; font-weight: bold;">${otp}</p>
     <p>If you did not request this code, please ignore this email.</p>

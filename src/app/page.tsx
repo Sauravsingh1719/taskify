@@ -46,16 +46,9 @@ const page = () => {
         <div>
           <a href='/sign-in'>
         <Button>
-          Login
+          Getting Started
         </Button>
         </a>
-        </div>
-        <div>
-          <a href='/sign-up'>
-          <Button>
-            Signup
-          </Button>
-          </a>
         </div>
       </div>
     </div>
