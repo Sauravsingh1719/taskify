@@ -42,6 +42,8 @@ export interface User extends Document {
     email: string;
     password: string;
     verifyCode:string,
+    forgotPasswordCode: string,
+    forgotPasswordCodeExpiry: Date,
     isVerified: boolean,
     verifyCodeExpiry: Date,
     tasks: Task[];
@@ -73,6 +75,12 @@ const UserSchema : Schema<User> = new Schema({
     verifyCode: {
         type: String,
         required: true
+    },
+    forgotPasswordCode: {
+        type: String,
+    },
+    forgotPasswordCodeExpiry: {
+        type: Date,
     },
     isVerified: {
         type: Boolean,
