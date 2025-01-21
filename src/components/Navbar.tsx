@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
 import { User } from 'next-auth';
-import Dashboard from '@/components/dash';
 import { useRouter } from 'next/navigation';
 
 function Navbar() {

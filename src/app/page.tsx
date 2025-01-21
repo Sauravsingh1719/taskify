@@ -1,33 +1,18 @@
 import React from 'react'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
-import { motion } from "motion/react"
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+
 
 
 const page = () => {
-
-  const taskanimate = {
-    hidden: {
-      scale: 0.1,
-      opacity: 0
-    },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-        duration: 0.8
-      }
-    }
-  }
-
   const words = `Organize your life with Taskify. Effortlessly manage your to-dos, track progress, and boost your productivity.`;
   return (
-    <div className='h-dvh w-dvw flex gap-5 flex-col text-center items-center justify-center' style={{
+  
+    <div className='h-dvh grid grid-cols-1 md:grid-cols-2 gap-4 lg:px-48 sm:px-10 py-5' style={{
       background :'radial-gradient(circle, #000000, #050505, #090909, #0d0d0d, #111111)'
     }}>
+      <div className='order-2 md:order-1 flex gap-5 flex-col text-center items-center justify-center'>
       <div>
         <div>
           <h1 className='font-extrabold text-8xl' style={{ 
@@ -51,7 +36,20 @@ const page = () => {
         </a>
         </div>
       </div>
+      </div>
+      <div className='flex items-center justify-center lg:p-40 order-1 md:order-2'>
+      <Image
+          src='/task.png'
+          alt='taskifyavtar'
+          layout='responsive'
+          width={400}
+          height={400}
+        />
+
+      </div>
+  
     </div>
+   
   )
 }
 
