@@ -32,7 +32,7 @@ function Navbar() {
                 Logout
               </Button>
               <Button
-                onClick={() => router.push(isOnDiaryPage ? '/' : '/diary')}
+                onClick={() => router.push(isOnDiaryPage ? '/dashboard' : '/diary')}
                 className="w-full md:w-auto bg-slate-100 text-black"
                 variant="outline"
               >
