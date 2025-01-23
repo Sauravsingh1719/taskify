@@ -17,6 +17,7 @@ import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import { signInSchema } from '@/schemas/signInSchema';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function SignInForm() {
     const router = useRouter();
@@ -69,9 +70,17 @@ export default function SignInForm() {
   
 
     return (
-        <div className="flex justify-center items-center min-h-screen" style={{
-            background: 'radial-gradient(circle, #000000, #050505, #090909, #0d0d0d, #111111)'
-        }}>
+        <div className= 'min-h-screen lg:w-max grid grid-cols-1 md:grid-cols-2 items-center justify-center  mx-10 lg:mx-60 lg:px-48 sm:px-10 py-5'>
+            <div>
+                    <Image
+                        src='/loginavtar.png'
+                        alt='loginavtarrrr'
+                        width={300}
+                        height={300}
+                    />
+            </div>
+            <div>
+            <div className="flex justify-center items-center" >
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
                 <div className="text-center">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
@@ -103,9 +112,11 @@ export default function SignInForm() {
                                 </FormItem>
                             )}
                         />
-                        <Button className='w-full' type="submit" disabled={isSubmitting}>
+                        <div className='items-center justify-center flex'>
+                        <Button className='w-max' type="submit" disabled={isSubmitting}>
                             {isSubmitting ? 'Signing in...' : 'Sign In'}
                         </Button>
+                        </div>
                     </form>
                 </Form>
                 <div className="text-center">
@@ -126,5 +137,8 @@ export default function SignInForm() {
                 </div>
             </div>
         </div>
-    );
+        </div>
+
+        </div>
+            );
 }

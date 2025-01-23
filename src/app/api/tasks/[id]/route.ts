@@ -7,7 +7,7 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
     await dbConnect();
     const session = await getServerSession(authOptions);
     const user = session?.user;
-    const taskId = params.id;
+    const taskId = await params.id;
 
     if (!session || !user) {
         return new Response(JSON.stringify({ message: "Not authenticated" }), { status: 401 });

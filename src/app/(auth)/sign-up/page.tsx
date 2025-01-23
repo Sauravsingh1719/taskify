@@ -19,6 +19,7 @@ import axios, { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { signUpSchema } from '@/schemas/signUpSchema';
+import Image from 'next/image';
 
 export default function SignUpForm() {
     const [username, setUsername] = useState('');
@@ -85,9 +86,17 @@ export default function SignUpForm() {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen " style={{
-          background :'radial-gradient(circle, #000000, #050505, #090909, #0d0d0d, #111111)'
-        }}>
+      <div className= 'min-h-screen lg:w-max grid grid-cols-1 md:grid-cols-2 items-center justify-center  mx-10 lg:mx-60 lg:px-48 sm:px-10 py-5'>
+        <div>
+               <Image
+                                      src='/signupavtar.png'
+                                      alt='loginavtarrrr'
+                                      width={500}
+                                      height={500}
+                                  />
+        </div>
+        <div>
+        <div className="flex justify-center items-center  " >
           <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
             <div className="text-center">
               <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
@@ -182,6 +191,8 @@ export default function SignUpForm() {
               </p>
             </div>
           </div>
+        </div>
+        </div>
         </div>
       );
 }
