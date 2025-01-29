@@ -12,11 +12,22 @@ interface VerificationEmailProps {
   <style>
     body {
       font-family: 'Roboto', Verdana, sans-serif;
+      padding: 20px; 
     }
+      .email-container {
+      border: 2px solid #e0e0e0;
+      padding: 20px;
+      }
+      .logo{
+        width:full
+        height: auto;
+      }
+      
   </style>
   </head>
   <body>
-  <div style="padding: 20px;">
+  <div style="padding: 20px;" class="email-container">
+  <img src="https://res.cloudinary.com/dodghmpuy/image/upload/v1738011729/taskifylogo.png" alt="logo" class="logo" />
     <h2>Hello ${username},</h2>
     <p>Thank you for registering. Please use the following verification code to complete your registration:</p>
     <p style="font-size: 20px; font-weight: bold;">${otp}</p>
